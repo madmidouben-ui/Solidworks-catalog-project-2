@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="كتالوج عربي مبسط لتعلم أساسيات SolidWorks خطوة بخطوة للمبتدئين.">
+<title>SolidWorks | كتالوج المبتدئين</title>
+<style>
+:root{
+ --bg:#f3f6fa;--panel:#fff;--ink:#172437;--muted:#68778b;--line:#e3e9f0;
+ --red:#d62935;--red2:#a91625;--navy:#10233d;--blue:#2463a6;--soft:#fff0f1;
+ --shadow:0 12px 32px rgba(20,40,70,.08);--radius:18px
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.75}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.topbar{background:var(--navy);color:white;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.2px}
+.logo{width:38px;height:38px;border-radius:12px;background:var(--red);display:grid;place-items:center;font-weight:900;font-size:17px;box-shadow:0 5px 14px #0003}
+.topbar small{color:#c5d1df}
+.hero{background:linear-gradient(125deg,#10233d 0%,#17385b 58%,#8d1d2c 100%);color:white;padding:58px 5% 64px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #ffffff22;border-radius:50%;left:-80px;top:-120px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}
+.hero-inner{max-width:1150px;margin:auto;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#ffffff17;border:1px solid #ffffff2b;padding:5px 12px;border-radius:30px;font-size:13px;color:#ffe3e5}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.25;margin:18px 0 12px;max-width:760px}
+.hero p{color:#d7e2ef;max-width:690px;margin:0 0 24px;font-size:16px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;border-radius:11px;padding:11px 18px;cursor:pointer;font-weight:700;transition:.2s}
+.btn-primary{background:var(--red);color:white}.btn-primary:hover{background:#ef3a47;transform:translateY(-2px)}
+.btn-ghost{background:#ffffff15;color:white;border:1px solid #ffffff50}.btn-ghost:hover{background:#ffffff25}
+main{max-width:1150px;margin:-25px auto 60px;padding:0 22px;position:relative;z-index:2}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:26px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:17px 20px;box-shadow:var(--shadow)}
+.stat strong{font-size:23px;color:var(--red);display:block}.stat span{font-size:13px;color:var(--muted)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:34px 0 16px;flex-wrap:wrap}
+.section-head h2{margin:0;font-size:25px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.search-row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 20px}
+.search{flex:1;min-width:210px;background:white;border:1px solid var(--line);border-radius:12px;padding:11px 14px;outline:none}
+.search:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2463a615}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{background:white;border:1px solid var(--line);padding:8px 13px;border-radius:30px;color:var(--muted);cursor:pointer;font-size:13px}
+.filter.active,.filter:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:white;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 5px 18px #18345408;display:flex;flex-direction:column;transition:.22s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card-top{height:128px;background:linear-gradient(135deg,#eaf0f7,#f9fbfd);display:flex;align-items:center;justify-content:center;position:relative}
+.card-top .number{position:absolute;top:12px;right:14px;background:white;color:var(--red);border-radius:9px;padding:2px 9px;font-size:12px;font-weight:800}
+.illustration{width:100px;height:76px;display:grid;place-items:center}
+.illustration svg{width:100%;height:100%}
+.card-body{padding:17px;display:flex;flex-direction:column;flex:1}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
+.tag{font-size:11px;padding:3px 8px;border-radius:30px;background:#edf3fa;color:#34516f}
+.tag.level{background:#fff1e5;color:#9a5414}
+.card h3{font-size:18px;margin:0 0 6px}
+.card p{color:var(--muted);font-size:13px;margin:0 0 13px;flex:1}
+.meta{display:flex;justify-content:space-between;color:#758398;font-size:12px;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.card button{margin-top:13px;width:100%;background:var(--soft);color:var(--red2);border:1px solid #ffd9dc;border-radius:10px;padding:9px;cursor:pointer;font-weight:700}
+.card button:hover{background:#ffe1e3}
+.path{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.path-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.path-step{padding:14px;border-radius:13px;background:#f6f8fb;border:1px solid var(--line)}
+.path-step b{display:block;color:var(--red);font-size:13px;margin-bottom:5px}
+.path-step span{font-size:13px;color:var(--muted)}
+.tip{margin-top:20px;background:#eef5ff;border:1px solid #d7e7fb;border-radius:14px;padding:16px 18px;color:#294a70;font-size:14px}
+footer{text-align:center;color:var(--muted);padding:24px;border-top:1px solid var(--line);font-size:12px}
+.modal{position:fixed;inset:0;background:#07182dcc;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}
+.modal.open{display:flex}
+.modal-box{background:white;border-radius:20px;max-width:650px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 25px 70px #0005}
+.modal-head{padding:20px 22px;background:var(--navy);color:white;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.modal-head h3{margin:0;font-size:20px}
+.close{background:#ffffff20;border:0;color:white;width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:20px}
+.modal-content{padding:22px}
+.modal-content h4{margin:14px 0 5px;color:var(--red)}
+.modal-content ol{padding-right:22px;margin-top:6px}
+.modal-content li{margin:6px 0}
+kbd{background:#edf1f6;border:1px solid #dce3eb;border-radius:5px;padding:2px 6px;font-size:12px}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:35px;background:white;border-radius:15px}
+@media(max-width:850px){.catalog{grid-template-columns:repeat(2,1fr)}.path-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.catalog{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding:42px 6% 55px}.hero h1{font-size:32px}main{padding:0 14px}.path-list{grid-template-columns:1fr 1fr}.stat{padding:12px 15px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="brand"><div class="logo">SW</div><div>SolidWorks <small style="display:block;font-weight:400">كتالوج المبتدئين</small></div></div>
+ <small>دليل تعليمي مستقل — الإصدار 1.0</small>
+</header>
+<section class="hero">
+ <div class="hero-inner">
+  <span class="eyebrow">✦ تعلم التصميم ثلاثي الأبعاد من الصفر</span>
+  <h1>ابدأ رحلتك في <span style="color:#ff6973">SolidWorks</span></h1>
+  <p>كتالوج مبسط يأخذك خطوة بخطوة: من التعرف على الواجهة والرسم ثنائي الأبعاد، إلى بناء أول قطعة ثلاثية الأبعاد وتجميعها.</p>
+  <div class="hero-actions">
+   <a class="btn btn-primary" href="#catalog">تصفح الدروس ←</a>
+   <a class="btn btn-ghost" href="#learning-path">عرض مسار التعلم</a>
+  </div>
+ </div>
+</section>
+<main>
+ <section class="stats" aria-label="إحصائيات الكتالوج">
+  <div class="stat"><strong>8</strong><span>وحدات تعليمية أساسية</span></div>
+  <div class="stat"><strong>مبتدئ</strong><span>لا تحتاج خبرة سابقة</span></div>
+  <div class="stat"><strong>3D</strong><span>من الرسم إلى النموذج</span></div>
+ </section>
+
+ <section id="learning-path">
+  <div class="section-head"><div><h2>مسار التعلم المقترح</h2><p>اتبع هذا الترتيب لتحصل على أساس متين.</p></div></div>
+  <div class="path">
+   <div class="path-list">
+    <div class="path-step"><b>01 — التعرف</b><span>الواجهة، الملفات، وأدوات العرض.</span></div>
+    <div class="path-step"><b>02 — الرسم</b><span>Sketch، الأشكال، والأبعاد والقيود.</span></div>
+    <div class="path-step"><b>03 — النمذجة</b><span>Extruded Boss/Base وRevolved Boss/Base.</span></div>
+    <div class="path-step"><b>04 — الإنهاء</b><span>القص، تدوير الحواف، التجميع والرسم الهندسي.</span></div>
+   </div>
+   <div class="tip"><strong>نصيحة:</strong> لا تنتقل إلى درس جديد قبل أن تطبق الدرس الحالي بنفسك. ابدأ بأشكال بسيطة مثل المكعب والأسطوانة واللوح المثقوب.</div>
+  </div>
+ </section>
+
+ <section id="catalog">
+  <div class="section-head"><div><h2>كتالوج الدروس</h2><p>اختر بطاقة لعرض الهدف والخطوات والتمرين المقترح.</p></div></div>
+  <div class="search-row">
+   <input id="search" class="search" type="search" placeholder="ابحث عن درس... مثل Sketch أو التجميع" aria-label="البحث في الدروس">
+   <div class="filters" id="filters">
+    <button class="filter active" data-filter="all">الكل</button>
+    <button class="filter" data-filter="أساسيات">أساسيات</button>
+    <button class="filter" data-filter="رسم">الرسم</button>
+    <button class="filter" data-filter="نمذجة">النمذجة</button>
+    <button class="filter" data-filter="تجميع">التجميع</button>
+   </div>
+  </div>
+  <div class="catalog" id="cards"></div>
+ </section>
+ <div class="tip" style="margin-top:24px;background:#fff8e9;border-color:#f3e4bd;color:#75521d">
+  <strong>تنبيه مهم:</strong> أسماء الأوامر قد تختلف قليلاً حسب إصدار SolidWorks وإعدادات الواجهة. هذا الكتالوج يشرح المفاهيم الأساسية، وليس بديلاً عن توثيق Dassault Systèmes الرسمي.
+ </div>
+</main>
+<footer>صُمم كدليل تعليمي للمبتدئين • SolidWorks علامة تجارية تابعة لمالكها • هذا الموقع غير رسمي وغير تابع للشركة.</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-box">
+  <div class="modal-head"><h3 id="modalTitle"></h3><button class="close" id="close" aria-label="إغلاق">×</button></div>
+  <div class="modal-content" id="modalContent"></div>
+ </div>
+</div>
+<script>
+const lessons = [
+{n:"01",title:"التعرف على واجهة SolidWorks",cat:"أساسيات",level:"سهل",time:"15–20 دقيقة",desc:"تعرف على مساحة العمل، شجرة التصميم، أشرطة الأدوات، وطرق تحريك النموذج.",goal:"فهم مكونات الواجهة والتنقل داخل مساحة التصميم.",steps:["افتح البرنامج واختر New ثم Part لإنشاء قطعة جديدة.","لاحظ شجرة التصميم FeatureManager في الجانب.","تعرف على CommandManager وألسنة الأدوات الأساسية.","جرّب تدوير مساحة العرض باستخدام زر الفأرة الأوسط، والتقريب بعجلة الفأرة.","احفظ الملف باسم واضح باستخدام Ctrl + S."],practice:"افتح ملف Part جديداً، وغيّر اتجاه العرض إلى Front ثم Top ثم Isometric.",terms:["FeatureManager","CommandManager","Graphics Area"]},
+{n:"02",title:"إنشاء Sketch والرسم ثنائي الأبعاد",cat:"رسم",level:"سهل",time:"25–35 دقيقة",desc:"ابدأ بالرسم على مستوى مثل Front Plane، وأنشئ خطوطاً ودوائر ومستطيلات.",goal:"إنشاء رسم ثنائي الأبعاد واضح يمكن استخدامه لبناء مجسم.",steps:["اختر مستوى Front Plane ثم اضغط Sketch.","استخدم Rectangle لرسم مستطيل وCircle لرسم دائرة.","استعمل Line لإضافة خطوط عند الحاجة.","اختر Smart Dimension لإضافة القياسات المطلوبة.","تأكد من أن الرسم محدد بالكامل بالأبعاد والقيود المناسبة ثم اخرج من Sketch."],practice:"ارسم مستطيلاً أبعاده 80 × 40 مم ودائرة قطرها 20 مم بجانبه.",terms:["Sketch","Plane","Smart Dimension"]},
+{n:"03",title:"القيود والعلاقات الهندسية",cat:"رسم",level:"متوسط",time:"20–30 دقيقة",desc:"تعلم كيف تجعل الرسم مضبوطاً باستخدام العلاقات مثل Horizontal وVertical وCoincident.",goal:"جعل الرسم مستقراً ودقيقاً بدلاً من الاعتماد على السحب بالماوس.",steps:["حدد خطين أو نقطة وخطاً داخل Sketch.","اختر العلاقة الهندسية المناسبة من Add Relations.","جرّب Horizontal وVertical وCoincident وTangent.","أضف الأبعاد باستخدام Smart Dimension.","لاحظ حالة الرسم: الأزرق يعني غالباً أنه غير محدد بالكامل، والأسود يعني أنه محدد بالكامل."],practice:"ارسم مستطيلاً واجعل أضلاعه أفقية ورأسية، ثم حدّد عرضه وارتفاعه.",terms:["Relations","Fully Defined","Under Defined"]},
+{n:"04",title:"تحويل الرسم إلى مجسم — Extrude",cat:"نمذجة",level:"سهل",time:"20–30 دقيقة",desc:"حوّل شكلاً ثنائي الأبعاد إلى جسم ثلاثي الأبعاد بإضافة عمق إليه.",goal:"إنشاء أول مجسم صلب باستخدام Extruded Boss/Base.",steps:["أنشئ Sketch لمستطيل أو دائرة.","اخرج من وضع Sketch.","من تبويب Features اختر Extruded Boss/Base.","أدخل عمقاً مناسباً، مثلاً 20 مم.","عاين الشكل ثم اضغط علامة التأكيد الخضراء."],practice:"أنشئ متوازي مستطيلات بأبعاد 60 × 40 مم وعمق 20 مم.",terms:["Features","Extruded Boss/Base","Depth"]},
+{n:"05",title:"القص وإزالة المواد — Extruded Cut",cat:"نمذجة",level:"متوسط",time:"20–30 دقيقة",desc:"اصنع ثقوباً أو تجاويف داخل القطعة عن طريق إزالة جزء من المادة.",goal:"التعرف على الفرق بين إضافة المادة وإزالتها.",steps:["حدد وجهاً من المجسم وأنشئ Sketch جديداً عليه.","ارسم دائرة في المكان المطلوب للثقب.","اخرج من Sketch واختر Extruded Cut من Features.","اختر Through All إذا أردت أن يمر الثقب عبر القطعة كلها، أو حدد عمقاً معيناً.","عاين النتيجة ثم أكد العملية."],practice:"أضف ثقباً دائرياً في منتصف اللوح الذي أنشأته في الدرس السابق.",terms:["Extruded Cut","Through All","Cut Feature"]},
+{n:"06",title:"التدوير والشطف — Fillet & Chamfer",cat:"نمذجة",level:"متوسط",time:"15–25 دقيقة",desc:"حسّن شكل القطعة بتدوير الحواف أو عمل شطف مائل لها.",goal:"فهم أدوات إنهاء الحواف واستخدامها بشكل صحيح.",steps:["افتح قطعة تحتوي على حواف واضحة.","من Features اختر Fillet لتدوير الحافة.","حدد نصف قطر صغيراً وعاين التأثير.","جرّب Chamfer لإنشاء حافة مشطوفة.","قارن بين النتيجتين وتراجع عن أي تعديل غير مناسب."],practice:"طبّق Fillet بنصف قطر 2 مم على حافتين، ثم جرّب Chamfer على حافة أخرى.",terms:["Fillet","Chamfer","Radius"]},
+{n:"07",title:"التجميع — Assembly",cat:"تجميع",level:"متوسط",time:"30–45 دقيقة",desc:"اجمع أكثر من قطعة في ملف واحد واربطها بعلاقات الحركة أو التثبيت المناسبة.",goal:"فهم طريقة بناء نموذج يتكون من عدة أجزاء.",steps:["احفظ قطعتين منفصلتين بصيغة Part.","أنشئ ملفاً جديداً من نوع Assembly.","أدرج القطعة الأولى؛ غالباً تثبت تلقائياً كمرجع.","أدرج القطعة الثانية بجانبها.","استخدم Mate مثل Coincident أو Concentric لربط الأسطح والمحاور."],practice:"أنشئ تجميعاً بسيطاً من محور أسطواني وقرص به ثقب مناسب.",terms:["Assembly","Mate","Concentric"]},
+{n:"08",title:"الرسم الهندسي — Drawing",cat:"أساسيات",level:"متوسط",time:"25–40 دقيقة",desc:"أنشئ ورقة رسم ثنائي الأبعاد من المجسم مع المساقط والأبعاد الأساسية.",goal:"التعرف على طريقة توثيق القطعة ليتمكن الآخرون من فهمها وتصنيعها.",steps:["افتح ملف Part أو Assembly مكتمل.","اختر Make Drawing from Part/Assembly أو أنشئ Drawing جديداً.","اختر حجم الورقة المناسب.","أدرج المساقط الأساسية مثل Front وTop وRight وIsometric.","أضف الأبعاد الضرورية واحفظ الرسم."],practice:"أنشئ رسماً هندسياً للقطعة ذات الثقب وأظهر ثلاثة مساقط مع الأبعاد.",terms:["Drawing","Standard Views","Annotations"]}
+];
+const icons = {
+"01":`<svg viewBox="0 0 120 90" fill="none"><rect x="17" y="14" width="86" height="61" rx="5" fill="#dce6f1" stroke="#57718e" stroke-width="2"/><rect x="25" y="23" width="18" height="45" rx="2" fill="#a9bfd5"/><rect x="49" y="23" width="46" height="8" rx="2" fill="#9aafc5"/><rect x="49" y="37" width="35" height="5" rx="2" fill="#b5c6d7"/><rect x="49" y="48" width="41" height="5" rx="2" fill="#b5c6d7"/><circle cx="89" cy="62" r="5" fill="#d62935"/></svg>`,
+"02":`<svg viewBox="0 0 120 90" fill="none"><rect x="20" y="18" width="80" height="55" rx="5" stroke="#8ca4bd" stroke-dasharray="3 3"/><rect x="34" y="29" width="42" height="28" stroke="#d62935" stroke-width="3"/><circle cx="85" cy="53" r="11" stroke="#2463a6" stroke-width="3"/><path d="M34 64H76M29 29V57" stroke="#7890a9" stroke-width="1.5"/></svg>`,
+"03":`<svg viewBox="0 0 120 90" fill="none"><path d="M27 64V24H91V64H27Z" stroke="#2463a6" stroke-width="3"/><path d="M27 17H91M20 24V64" stroke="#d62935" stroke-width="2"/><path d="M27 17l5-3m-5 3l5 3M91 17l-5-3m5 3l-5 3M20 24l-3 5m3-5l3 5M20 64l-3-5m3 5l3-5" stroke="#d62935" stroke-width="1.5"/><text x="58" y="12" font-size="8" text-anchor="middle" fill="#a91625">80 mm</text></svg>`,
+"04":`<svg viewBox="0 0 120 90" fill="none"><path d="M24 34L62 15L98 34L60 54L24 34Z" fill="#b7c9dc" stroke="#45627f" stroke-width="2"/><path d="M24 34V67L60 84V54L24 34Z" fill="#8fa9c4" stroke="#45627f" stroke-width="2"/><path d="M60 54V84L98 64V34L60 54Z" fill="#d5e0eb" stroke="#45627f" stroke-width="2"/></svg>`,
+"05":`<svg viewBox="0 0 120 90" fill="none"><path d="M22 34L61 15L98 34L60 54L22 34Z" fill="#c4d3e2" stroke="#45627f" stroke-width="2"/><path d="M22 34V66L60 84V54L22 34Z" fill="#8fa9c4" stroke="#45627f" stroke-width="2"/><path d="M60 54V84L98 65V34L60 54Z" fill="#dce5ee" stroke="#45627f" stroke-width="2"/><ellipse cx="61" cy="35" rx="10" ry="5" fill="#fff" stroke="#d62935" stroke-width="2"/><path d="M51 35V66M71 35V66" stroke="#d62935" stroke-width="2"/></svg>`,
+"06":`<svg viewBox="0 0 120 90" fill="none"><path d="M25 58L55 25L93 40L63 72L25 58Z" fill="#c7d6e5" stroke="#45627f" stroke-width="2"/><path d="M25 58V68L63 82V72" fill="#8fa9c4" stroke="#45627f" stroke-width="2"/><path d="M63 72L93 40V51L63 82" fill="#a9bfd5" stroke="#45627f" stroke-width="2"/><path d="M38 57Q46 48 52 43" stroke="#d62935" stroke-width="3" fill="none"/></svg>`,
+"07":`<svg viewBox="0 0 120 90" fill="none"><path d="M19 32L48 18L75 32L46 47L19 32Z" fill="#c7d6e5" stroke="#45627f" stroke-width="2"/><path d="M19 32V59L46 74V47" fill="#8fa9c4" stroke="#45627f" stroke-width="2"/><path d="M46 47V74L75 59V32" fill="#dce5ee" stroke="#45627f" stroke-width="2"/><path d="M60 23L84 11L106 23L82 36L60 23Z" fill="#e8b5ba" stroke="#a91625" stroke-width="2"/><path d="M60 23V49L82 62V36" fill="#d97880" stroke="#a91625" stroke-width="2"/><path d="M82 36V62L106 49V23" fill="#f1cdd0" stroke="#a91625" stroke-width="2"/></svg>`,
+"08":`<svg viewBox="0 0 120 90" fill="none"><path d="M20 18H100V72H20Z" fill="#fff" stroke="#8ca4bd" stroke-width="2"/><path d="M31 30H61V51H31Z" stroke="#2463a6" stroke-width="2"/><path d="M70 30H89V51H70Z" stroke="#2463a6" stroke-width="2"/><path d="M31 60H61M70 60H89M25 25H18M25 56H18M66 25V18M94 25V18" stroke="#d62935" stroke-width="1.5"/></svg>`
+};
+const cards = document.getElementById('cards');
+const search = document.getElementById('search');
+let activeFilter='all';
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const found=lessons.filter(x=>(activeFilter==='all'||x.cat===activeFilter)&&(`${x.title} ${x.desc} ${x.cat} ${x.terms.join(' ')}`.toLowerCase().includes(q)));
+ cards.innerHTML=found.length?found.map(x=>`
+ <article class="card">
+  <div class="card-top"><span class="number">الدرس ${x.n}</span><div class="illustration">${icons[x.n]}</div></div>
+  <div class="card-body">
+   <div class="tags"><span class="tag">${x.cat}</span><span class="tag level">${x.level}</span></div>
+   <h3>${x.title}</h3><p>${x.desc}</p>
+   <div class="meta"><span>◷ ${x.time}</span><span>مبتدئ</span></div>
+   <button data-lesson="${x.n}">عرض تفاصيل الدرس ←</button>
+  </div>
+ </article>`).join(''):'<div class="empty">لا توجد دروس مطابقة لبحثك. جرّب كلمة أخرى.</div>';
+}
+function openLesson(id){
+ const x=lessons.find(a=>a.n===id); if(!x)return;
+ document.getElementById('modalTitle').textContent=`${x.n} — ${x.title}`;
+ document.getElementById('modalContent').innerHTML=`
+ <div class="tags"><span class="tag">${x.cat}</span><span class="tag level">${x.level}</span><span class="tag">المدة: ${x.time}</span></div>
+ <h4>ماذا ستتعلم؟</h4><p>${x.goal}</p>
+ <h4>خطوات التطبيق</h4><ol>${x.steps.map(s=>`<li>${s}</li>`).join('')}</ol>
+ <h4>تمرين تطبيقي</h4><p>${x.practice}</p>
+ <h4>مصطلحات مهمة</h4><p>${x.terms.map(t=>`<kbd>${t}</kbd>`).join(' ')}</p>`;
+ document.getElementById('modal').classList.add('open');
+}
+cards.addEventListener('click',e=>{const b=e.target.closest('[data-lesson]');if(b)openLesson(b.dataset.lesson)});
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;activeFilter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()});
+search.addEventListener('input',render);
+const modal=document.getElementById('modal');
+document.getElementById('close').addEventListener('click',()=>modal.classList.remove('open'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+render();
+</script>
+</body>
+</html>
